@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Developer — создание сайтов</title>
+<meta name="description" content="Разработка сайтов и веб-приложений. Создание, верстка, доработка под ключ. Индивидуальный подход и современные технологии.">
+<meta name="keywords" content="веб-разработчик, создание сайтов, верстка сайтов, landing page, web developer, портфолио">
+<meta property="og:title" content="Web Developer — создание сайтов">
+<meta property="og:description" content="Разработка сайтов и веб-приложений под ключ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pilaevweb.github.io/portfolio">
+<meta property="og:image" content="https://pilaevweb.github.io/portfolio/siteava.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web Developer — создание сайтов">
+<meta name="twitter:description" content="Разработка сайтов и веб-приложений под ключ.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💻%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Noise overlay -->
+<div class="noise-overlay"></div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="container">
+    <a href="#" class="logo">Pilaev<span>Web</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#calculator">Калькулятор</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:12px">
+      <button class="hamburger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="theme-toggle" aria-label="Переключить тему">
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="#contact" class="btn-nav">Связаться</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="mobile-link">Услуги</a>
+  <a href="#projects" class="mobile-link">Проекты</a>
+  <a href="#calculator" class="mobile-link">Калькулятор</a>
+  <a href="#about" class="mobile-link">Обо мне</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#testimonials" class="mobile-link">Отзывы</a>
+  <a href="#contact" class="mobile-link">Контакты</a>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-spotlight" id="heroSpotlight"></div>
+  <div class="container">
+    <div>
+      <h1><span class="scramble-text">Создаю сайты</span>, <br><span class="highlight gradient-text">которые работают</span></h1>
+      <p>Разработка современных веб-сайтов и приложений под ключ. От лендинга до сложного веб-сервиса.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary btn-glow">Смотреть работы</a>
+        <a href="#contact" class="btn btn-outline btn-glow">Связаться</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="count-to" data-target="5">0</span>+</div>
+          <div class="hero-stat-label">Лет опыта</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="count-to" data-target="40">0</span>+</div>
+          <div class="hero-stat-label">Проектов</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num"><span class="count-to" data-target="25">0</span>+</div>
+          <div class="hero-stat-label">Клиентов</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-card">
+        <div class="editor-header">
+          <span class="dot r"></span>
+          <span class="dot y"></span>
+          <span class="dot g"></span>
+          <span class="file-name">index.html — PilaevWeb</span>
+        </div>
+        <div class="editor-body">
+          <div class="line-nums">
+            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+            <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+            <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+            <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+          </div>
+          <div class="code-content">
+            <div class="line"><span class="hl-doctype">&lt;!DOCTYPE html&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;html</span> <span class="hl-attr">lang</span><span class="hl-pun">=</span><span class="hl-string">"ru"</span><span class="hl-tag">&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;head&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;meta</span> <span class="hl-attr">charset</span><span class="hl-pun">=</span><span class="hl-string">"UTF-8"</span><span class="hl-tag">&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;title&gt;</span><span class="hl-text">PilaevWeb — Создаю сайты</span><span class="hl-tag">&lt;/title&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;link</span> <span class="hl-attr">rel</span><span class="hl-pun">=</span><span class="hl-string">"stylesheet"</span> <span class="hl-attr">href</span><span class="hl-pun">=</span><span class="hl-string">"style.css"</span><span class="hl-tag">&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;style&gt;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-prop">color</span><span class="hl-pun">:</span> <span class="hl-val">#ff6b35</span><span class="hl-pun">;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-css-selector">.hero</span> <span class="hl-pun">{</span></div>
+            <div class="line" style="padding-left:60px"><span class="hl-prop">display</span><span class="hl-pun">:</span> <span class="hl-val">grid</span><span class="hl-pun">;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-pun">}</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;/style&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;/head&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;body&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;header</span> <span class="hl-attr">class</span><span class="hl-pun">=</span><span class="hl-string">"hero"</span><span class="hl-tag">&gt;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-tag">&lt;h1&gt;</span><span class="hl-text">Создаю сайты под ключ</span><span class="hl-tag">&lt;/h1&gt;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-tag">&lt;p</span> <span class="hl-attr">class</span><span class="hl-pun">=</span><span class="hl-string">"subtitle"</span><span class="hl-tag">&gt;</span><span class="hl-text">Современные решения для вашего бизнеса</span><span class="hl-tag">&lt;/p&gt;</span></div>
+            <div class="line" style="padding-left:40px"><span class="hl-tag">&lt;a</span> <span class="hl-attr">href</span><span class="hl-pun">=</span><span class="hl-string">"#contact"</span> <span class="hl-attr">class</span><span class="hl-pun">=</span><span class="hl-string">"btn"</span><span class="hl-tag">&gt;</span><span class="hl-text">Связаться</span><span class="hl-tag">&lt;/a&gt;</span></div>
+            <div class="line" style="padding-left:20px"><span class="hl-tag">&lt;/header&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;/body&gt;</span></div>
+            <div class="line"><span class="hl-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Услуги</div>
+      <h2>Что я делаю</h2>
+      <p>Разрабатываю сайты любой сложности — от простых лендингов до многофункциональных веб-приложений</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#ff6b35">
+        <span class="service-idx">01</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Сайты под ключ</h3>
+        <p>Лендинги, корпоративные сайты, интернет-магазины. Адаптивная вёрстка, современный дизайн, чистый код.</p>
+      </div>
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#8b5cf6">
+        <span class="service-idx">02</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Веб-приложения</h3>
+        <p>SaaS-платформы, дашборды, CRM-системы. Полный цикл разработки на React, Next.js, Node.js.</p>
+      </div>
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#3b82f6">
+        <span class="service-idx">03</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.32 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+        <h3>UI/UX Дизайн</h3>
+        <p>Прототипирование, дизайн интерфейсов, создание дизайн-систем. Figma, удобство и эстетика.</p>
+      </div>
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#10b981">
+        <span class="service-idx">04</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/><path d="M21 12a5 5 0 00-5-5"/></svg></div>
+        <h3>SEO & Оптимизация</h3>
+        <p>Внутренняя оптимизация, скорость загрузки, Core Web Vitals. Техническая подготовка к продвижению.</p>
+      </div>
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#f59e0b">
+        <span class="service-idx">05</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Поддержка и доработка</h3>
+        <p>Обслуживание сайтов, добавление функционала, рефакторинг legacy-кода, миграция данных.</p>
+      </div>
+      <div class="service-card glass-card gradient-border shine-card" style="--accent:#ec4899">
+        <span class="service-idx">06</span>
+        <div class="icon"><span class="icon-bg"></span><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+        <h3>Адаптивная вёрстка</h3>
+        <p>Pixel-perfect вёрстка с нуля или по макету. BEM, Flexbox, Grid, анимации, кроссбраузерность.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="section" id="projects" style="background:var(--gray-light)">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Портфолио</div>
+      <h2>Последние проекты</h2>
+      <p>Каждый проект — это решение конкретной бизнес-задачи с современным технологическим стеком</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured glass-card gradient-border shine-card">
+        <div class="project-preview" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+          <span class="preview-emoji">⚡</span>
+          <span class="featured-badge">Featured</span>
+          <div class="project-links">
+            <a href="#" class="pl-demo">Демо</a>
+            <a href="#" class="pl-code">Код</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Web App</div>
+          <h3>Energy Dashboard</h3>
+          <p>Панель мониторинга энергопотребления с графиками и аналитикой в реальном времени</p>
+          <div class="tech-stack"><span>React</span><span>D3.js</span><span>Node.js</span></div>
+        </div>
+      </div>
+      <div class="project-card glass-card gradient-border shine-card">
+        <div class="project-preview" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+          <span class="preview-emoji">🛒</span>
+          <div class="project-links">
+            <a href="#" class="pl-demo">Демо</a>
+            <a href="#" class="pl-code">Код</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tag">E-commerce</div>
+          <h3>Fashion Store</h3>
+          <p>Интернет-магазин одежды с корзиной, личным кабинетом и интеграцией платежей</p>
+          <div class="tech-stack"><span>Next.js</span><span>Stripe</span><span>PostgreSQL</span></div>
+        </div>
+      </div>
+      <div class="project-card glass-card gradient-border shine-card">
+        <div class="project-preview" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">
+          <span class="preview-emoji">📊</span>
+          <div class="project-links">
+            <a href="#" class="pl-demo">Демо</a>
+            <a href="#" class="pl-code">Код</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tag">CRM</div>
+          <h3>ClientBase CRM</h3>
+          <p>Система управления взаимоотношениями с клиентами с кастомными отчётами</p>
+          <div class="tech-stack"><span>Vue.js</span><span>Express</span><span>MongoDB</span></div>
+        </div>
+      </div>
+      <div class="project-card glass-card gradient-border shine-card">
+        <div class="project-preview" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">
+          <span class="preview-emoji">🏠</span>
+          <div class="project-links">
+            <a href="#" class="pl-demo">Демо</a>
+            <a href="#" class="pl-code">Код</a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-tag">Landing</div>
+          <h3>Real Estate</h3>
+          <p>Сайт-витрина агентства недвижимости с галереей объектов и 3D-турами</p>
+          <div class="tech-stack"><span>HTML/CSS</span><span>Three.js</span><span>GSAP</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About / Reasons -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Обо мне</div>
+      <h2>Почему стоит работать со мной</h2>
+      <p>Ответственный подход, чистый код и внимание к деталям в каждом проекте</p>
+    </div>
+    <div class="about-layout">
+      <div class="about-photo">
+        <div class="photo-frame">
+          <img src="siteava.jpg" alt="Дмитрий Пилаев — веб-разработчик">
+        </div>
+        <div class="photo-name">Дмитрий</div>
+        <div class="photo-role">Full-Stack Web Developer</div>
+        <div class="photo-contacts">
+          <a href="mailto:dimapylaev8@gmail.com">dimapylaev8@gmail.com</a>
+          <a href="tel:+79006782581">+7 900 678-25-81</a>
+          <a href="https://t.me/mareeo2003" target="_blank">@mareeo2003</a>
+        </div>
+      </div>
+      <div class="about-reasons">
+        <div class="reasons-grid">
+          <div class="reason-card shine-card">
+            <div class="number">01</div>
+            <h3>Современный стек</h3>
+            <p>React, Next.js, TypeScript, Node.js — только актуальные технологии без устаревших решений.</p>
+          </div>
+          <div class="reason-card shine-card">
+            <div class="number">02</div>
+            <h3>Адаптивность</h3>
+            <p>Идеальное отображение на всех устройствах: от ультрашироких мониторов до мобильных телефонов.</p>
+          </div>
+          <div class="reason-card shine-card">
+            <div class="number">03</div>
+            <h3>Производительность</h3>
+            <p>Оптимизация скорости загрузки, Core Web Vitals, SEO-дружественная структура кода.</p>
+          </div>
+          <div class="reason-card shine-card">
+            <div class="number">04</div>
+            <h3>Чистый код</h3>
+            <p>Понятная архитектура, комментарии, документация. Любой разработчик продолжит работу без проблем.</p>
+          </div>
+          <div class="reason-card shine-card">
+            <div class="number">05</div>
+            <h3>Поддержка 24/7</h3>
+            <p>Быстрая обратная связь, оперативное решение проблем, регулярные отчёты о проделанной работе.</p>
+          </div>
+          <div class="reason-card shine-card">
+            <div class="number">06</div>
+            <h3>Гарантия качества</h3>
+            <p>Бесплатная поддержка после сдачи проекта. Фиксируем баги и дорабатываем, пока вы довольны.</p>
+          </div>
+        </div>
+        <div class="about-timeline">
+          <h3><span>—</span> Опыт</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-year">2025 — наст.</div>
+              <h4>Senior Full-Stack Developer</h4>
+              <p>Разработка сложных веб-приложений, архитектура проектов, менторство</p>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-year">2023 — 2025</div>
+              <h4>Full-Stack Developer</h4>
+              <p>React, Node.js, TypeScript — коммерческая разработка и поддержка проектов</p>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-year">2021 — 2023</div>
+              <h4>Frontend Developer</h4>
+              <p>Вёрстка, интерфейсы, анимации, работа в команде над крупными проектами</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section" style="background:var(--gray-light)" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Навыки</div>
+      <h2>Технологии</h2>
+      <p>Инструменты и фреймворки, с которыми работаю ежедневно</p>
+    </div>
+    <div class="skill-progress">
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>React / Next.js</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div></div>
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>TypeScript</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>Node.js / Express</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div></div>
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>PostgreSQL / MongoDB</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div></div>
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>HTML / CSS / Tailwind</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div></div>
+      <div class="skill-bar-item"><div class="skill-bar-header"><span>Git / Docker / DevOps</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Отзывы</div>
+      <h2>Что говорят клиенты</h2>
+      <p>Результаты моей работы — довольные заказчики и успешные проекты</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card shine-card">
+        <div class="stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="quote">«Сделал сайт для нашей кофейни — всё работает идеально. Красивый, быстрый, удобный. Клиенты в восторге, заказов стало больше. Спасибо!»</p>
+        <div class="author">
+          <div class="avatar">А</div>
+          <div class="info">
+            <strong>Анна</strong>
+            <span>Владелец кофейни «CoffeeTime»</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card shine-card">
+        <div class="stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="quote">«Разработал CRM-систему для нашей логистической компании. Автоматизировали учёт заказов, сократили время обработки на 40%. Рекомендую.»</p>
+        <div class="author">
+          <div class="avatar">М</div>
+          <div class="info">
+            <strong>Михаил</strong>
+            <span>CEO «LogiTech»</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card shine-card">
+        <div class="stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="quote">«Заказала лендинг для запуска онлайн-курса. Дизайн превзошёл ожидания! Конверсия 12% с первых дней. Очень довольна результатом и подходом.»</p>
+        <div class="author">
+          <div class="avatar">Е</div>
+          <div class="info">
+            <strong>Елена</strong>
+            <span>Основатель «EduPro»</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Calculator -->
+<section class="calc-section section" id="calculator">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Калькулятор</div>
+      <h2>Примерная стоимость</h2>
+      <p>Выберите параметры и получите предварительную оценку вашего проекта</p>
+    </div>
+    <div class="calc-layout">
+      <div class="calc-form">
+        <div class="calc-group">
+          <label>Тип сайта</label>
+          <select id="calcType">
+            <option value="30000">Лендинг (одна страница) — от 30 000 ₽</option>
+            <option value="60000">Многостраничный сайт — от 60 000 ₽</option>
+            <option value="100000">Интернет-магазин — от 100 000 ₽</option>
+            <option value="150000">Веб-приложение / CRM — от 150 000 ₽</option>
+          </select>
+        </div>
+        <div class="calc-group">
+          <label>Дизайн: <span id="calcDesignLabel">Индивидуальный</span></label>
+          <input type="range" id="calcDesign" min="0" max="2" value="1" step="1">
+          <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--gray)">
+            <span>По шаблону</span>
+            <span>Индивидуальный</span>
+            <span>Премиум дизайн</span>
+          </div>
+        </div>
+        <div class="calc-group">
+          <label>Дополнительно</label>
+          <div class="calc-checkboxes">
+            <label><input type="checkbox" id="calcAdaptive" checked> Адаптивность</label>
+            <label><input type="checkbox" id="calcSEO"> SEO-оптимизация</label>
+            <label><input type="checkbox" id="calcAdmin"> Админ-панель</label>
+            <label><input type="checkbox" id="calcAnim"> Анимации</label>
+            <label><input type="checkbox" id="calcPayment"> Платёжная система</label>
+            <label><input type="checkbox" id="calcBlog"> Блог / Новости</label>
+          </div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-total"><span id="calcTotal">55 000</span> <small>₽</small></div>
+        <div class="calc-label">Примерная стоимость</div>
+        <div class="calc-breakdown" id="calcBreakdown"></div>
+        <p style="font-size:13px;color:var(--gray)">* Точная цена после обсуждения ТЗ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" style="background:var(--gray-light)">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">FAQ</div>
+      <h2>Часто задаваемые вопросы</h2>
+      <p>Всё, что вы хотели знать о сотрудничестве</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Сколько времени занимает разработка сайта? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Всё зависит от сложности. Лендинг — от 3 до 7 дней, корпоративный сайт — от 2 недель, интернет-магазин или веб-приложение — от 3 недель. Точные сроки оговариваем после брифа.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Предоставляете ли вы поддержку после сдачи? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Да, после завершения проекта я предоставляю бесплатную поддержку в течение 30 дней: исправляю баги, вношу мелкие правки. На постоянное обслуживание можно заключить отдельный договор.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Нужен ли мне дизайн-макет перед началом работы? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Если у вас есть готовый макет в Figma или PSD — отлично. Если нет — я сам разработаю дизайн, согласую с вами и только потом приступлю к вёрстке. Вам не нужно разбираться в дизайне.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Работаете ли вы с физическими лицами? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Да, я работаю как с юрлицами (ООО, ИП), так и с физическими лицами. Оплата: наличные, перевод на карту или безналичный расчёт с НДС.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Какие технологии вы используете? <span class="faq-icon">+</span></button>
+        <div class="faq-answer">Современный стек: React, Next.js, TypeScript для фронтенда; Node.js, PostgreSQL, MongoDB для бэкенда. Все проекты делаю с нуля на актуальных версиях без устаревших библиотек.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <h2>Расскажите о вашем проекте</h2>
+    <p>Оставьте заявку — я свяжусь с вами в ближайшее время</p>
+    <form class="cta-form" id="contactForm" action="https://formspree.io/f/xnjrybor" method="POST">
+      <div class="cta-form-row">
+        <input type="text" name="name" placeholder="Ваше имя" required>
+        <input type="tel" name="phone" placeholder="Телефон">
+      </div>
+      <div class="cta-form-row">
+        <input type="email" name="email" placeholder="Email" required>
+        <select name="project_type">
+          <option value="">Тип проекта</option>
+          <option>Лендинг</option>
+          <option>Многостраничный сайт</option>
+          <option>Интернет-магазин</option>
+          <option>Веб-приложение</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Опишите вашу задачу..."></textarea>
+      <button type="submit" class="btn btn-primary">Отправить заявку</button>
+    </form>
+    <div class="cta-contacts">
+      <a href="https://t.me/mareeo2003" target="_blank">✈️ @mareeo2003</a>
+      <a href="mailto:dimapylaev8@gmail.com">✉️ dimapylaev8@gmail.com</a>
+      <a href="tel:+79006782581">📞 +7 900 678-25-81</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-logo">Pilaev<span>Web</span></div>
+    <div class="footer-links">
+      <a href="#services">Услуги</a>
+      <a href="#projects">Проекты</a>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">Обо мне</a>
+      <a href="#testimonials">Отзывы</a>
+      <a href="#contact">Контакты</a>
+    </div>
+    <div class="footer-copy">© 2026 PilaevWeb</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/gsap-init.js"></script>
+</body>
+</html>
